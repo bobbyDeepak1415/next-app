@@ -5,9 +5,9 @@ type CardProps={
 
 const Card = ({title,description}:CardProps) => {
   return (
-    <div>
-      <h1>Card component</h1>
-      <p>simpe card component</p>
+    <div className="card p-4 rounded shadow-md w-fit bg-gray-900">
+      <h1>{title}</h1>
+      <p>{description}</p>
     </div>
   )
 }
