@@ -1,6 +1,9 @@
-import React from 'react'
+type CardProps={
+   title:string,
+   description:string
+}
 
-const Card = () => {
+const Card = ({title,description}:CardProps) => {
   return (
     <div>
       <h1>Card component</h1>
