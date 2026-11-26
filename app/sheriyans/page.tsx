@@ -2,7 +2,7 @@ export default function sheriyans(){
 
     return <>
     <h1>Sheriyans</h1>
-    <p>his Sheriyans Page</p>
+    <p>This is Sheriyans Page</p>
     </>
 
 }
