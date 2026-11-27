@@ -23,14 +23,19 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
-        <nav>
+      <body className=" min-h-full flex flex-col">
+        <nav className="bg-gray-800 flex gap-4 p-4">
           <a href="/">Home</a>
           <a href="/about" >About</a>
           <a href="/sheriyans">Sheriyans</a>
           <a href="/sheriyans/classroom">Classroom</a>
         </nav>
-        {children}</body>
+        <div className="outline outline-red-800">
+
+        {children}
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error placeat blanditiis, consequuntur aliquid ullam ipsum exercitationem velit eos explicabo itaque a temporibus ipsam optio eligendi provident impedit ducimus voluptatibus nam dolores libero distinctio necessitatibus doloribus, accusantium assumenda. Similique ipsa porro architecto magni nobis, labore aliquam adipisci voluptate ipsum totam quidem?</p>
+        </div>
+        </body>
     </html>
   );
 }
