@@ -12,6 +12,7 @@ const Classroom = async () => {
   return (
     <main>
 <FilteredUsers users={users}/>
+
     </main>
   )
   
