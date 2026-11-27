@@ -18,6 +18,15 @@ const username=pageParams.name
 
 const user =users.find(user=>user.name.toLocaleLowerCase() === username.toLocaleLowerCase())
 
+if(!user){
+   
+   return <div>
+
+       <h1>User not found</h1>
+       <p>The user with the name {username} does not exist</p>
+   </div>
+}
+
     return (
         <div>
             <h2>{user?.name}'s Profile page</h2>
