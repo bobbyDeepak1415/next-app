@@ -1,11 +1,27 @@
-import React from 'react'
 
-const page = () => {
-  return (
-    <div>
-      <h1>This is Classroom</h1>
-    </div>
-  )
+type User={
+  name:string,
+  id:number
 }
 
-export default page
+const Classroom = async () => {
+
+  const response=await fetch("https://dummyjson.com/users")
+
+  const users=await response.json()
+
+
+  return (
+    <main>
+<ul>
+
+      {users.map((user:User)=>{
+        return <li key={user.id}>{user.name}</li>
+      })}
+      </ul>
+    </main>
+  )
+  
+}
+
+export default Classroom
