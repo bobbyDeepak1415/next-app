@@ -1,23 +1,27 @@
+import { use, useState } from "react"
 
 type User={
   name:string,
-  id:number
+  id:number,
+  username:string
 }
 
 const Classroom = async () => {
 
-  const response=await fetch("https://dummyjson.com/users")
+  
+
+  const response=await fetch("https://jsonplaceholder.typicode.com/users")
 
   const users=await response.json()
 
+const filteredNames=users.filter((u:string)=>u.name.toLowerCase().includes(name.toLowerCase()))
 
   return (
     <main>
+      <input value={name} onChange={(e)=>setName(e.target.value)}/>
 <ul>
 
-      {users.map((user:User)=>{
-        return <li key={user.id}>{user.name}</li>
-      })}
+     
       </ul>
     </main>
   )
