@@ -1,6 +1,9 @@
 
+type ProfilePageProps={
+    params:Promise<{name:string}>
+}
 
-export default function BobbyProfilePage(){
+export default async function ProfilePage({params}:ProfilePageProps){
 
     const users=[
         {id:1,name:"bobby",email:"bobby.deepak@gmail.com",bio:"Loem ipsum dolor sit amet consectetur adipisicing elit. Provident, corporis!"},
@@ -9,11 +12,17 @@ export default function BobbyProfilePage(){
         {id:4,name:"King",email:"king.deepak@gmail.com",bio:"Loem ipsum dolor sit amet consectetur adipisicing elit. Provident, corporis!"},
     ]
 
+    const pageParams=await params
+
+    const userName=pageParams.name
+
+    const user=users.find((user)=>user.name.toLocaleLowerCase()===userName.toLocaleLowerCase())
 
     return (
         <div>
-            <h1>Bobby's profile</h1>
-            <p>This is bobby's profile page baby</p>
+            <h1>{user?.name}'s profile</h1>
+            <p>Email:{user?.email}</p>
+            <p>Bio:{user?.bio}</p>
         </div>
     )
 }
