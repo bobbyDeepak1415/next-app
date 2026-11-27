@@ -1,8 +1,15 @@
 'use client'
-
 import { useState } from "react"
 
-export default function FilterUsers(){
+
+
+type User={
+  name:string,
+  id:number,
+  username:string
+}
+
+export default function FilterUsers({users}:{users:User[]}){
 
     const [name,setName]=useState("")
 

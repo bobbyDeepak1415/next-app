@@ -1,10 +1,3 @@
-import { use, useState } from "react"
-
-type User={
-  name:string,
-  id:number,
-  username:string
-}
 
 const Classroom = async () => {
 
