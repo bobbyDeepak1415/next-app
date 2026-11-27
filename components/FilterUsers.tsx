@@ -19,7 +19,8 @@ export default function FilterUsers({users}:{users:User[]}){
 
     return (
         <div>
-      <input className="border" type="text" value={searchTerm} onChange={(e)=>setSearchTerm(e.target.value)}/>
+          <label htmlFor="search-input">Search Here:</label>
+      <input id="search-input" className="border" type="text" value={searchTerm} onChange={(e)=>setSearchTerm(e.target.value)}/>
 
         <ul>
              {filteredNames.map((user:User)=>{
