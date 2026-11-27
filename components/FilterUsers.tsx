@@ -11,15 +11,23 @@ type User={
 
 export default function FilterUsers({users}:{users:User[]}){
 
-    const [name,setName]=useState("")
+
+    const [searchTerm,setSearchTerm]=useState("")
+
+    const filteredNames=users.filter((u:string)=>u.name.toLowerCase().includes(name.toLowerCase()))
+
 
     return (
+        <div>
+      <input type="text" value={searchTerm} onChange={(e)=>setSearchTerm(e.target.value)}/>
+
         <ul>
              {users.map((user:User)=>{
-        return <li key={user.id}>{user.name}</li>
-      })}
+                 return <li key={user.id}>{user.name}</li>
+                })}
         
         </ul>
+                </div>
     )
 
 }

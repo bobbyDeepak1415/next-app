@@ -1,4 +1,5 @@
 
+import FilteredUsers from '@/components/FilterUsers'
 const Classroom = async () => {
 
   
@@ -7,15 +8,10 @@ const Classroom = async () => {
 
   const users=await response.json()
 
-const filteredNames=users.filter((u:string)=>u.name.toLowerCase().includes(name.toLowerCase()))
 
   return (
     <main>
-      <input value={name} onChange={(e)=>setName(e.target.value)}/>
-<ul>
-
-     
-      </ul>
+<FilteredUsers users={users}/>
     </main>
   )
   
