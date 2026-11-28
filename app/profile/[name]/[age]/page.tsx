@@ -20,10 +20,17 @@ export default async function ProfilePage({params}:ProfilePageAgeProps){
 
     const user=users.find((user)=>user.age.toString()===userAge.toString() && user.name.toLocaleLowerCase()===userName.toLocaleLowerCase())
 
+    if(!user){
+       return <h2>User not found</h2>
+    }
+
     return (
     <div>
 
-        <h1>User{}</h1>
+        <h1>Username:{user.name}</h1>
+        <p>User email:{user.email}</p>
+        <p>User age:{user.age}</p>
+        <p>User Bio:{user.bio}</p>
     
     </div>
 )
