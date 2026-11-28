@@ -1,4 +1,3 @@
-import ProfilePage from "../page"
 
 type ProfilePageAgeProps={
     params:Promise<{name:string,age:number}>
@@ -16,8 +15,15 @@ export default async function ProfilePage({params}:ProfilePageAgeProps){
 
     const pageParams=await params
 
+    const userName=pageParams.name
+    const userAge=pageParams.age
+
+    const user=users.find((user)=>user.age.toString()===userAge.toString() && user.name.toLocaleLowerCase()===userName.toLocaleLowerCase())
+
     return (
     <div>
+
+        <h1>User{}</h1>
     
     </div>
 )
